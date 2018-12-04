@@ -7,6 +7,7 @@
 using namespace std;
 
 class Agendamento {
+    /*** Agendamento ***/
 
     public:
         Agendamento(string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos);
