@@ -17,7 +17,9 @@ void cadastroResidou::daleted(Residuo &r){
         vector<Residuo*>::iterator it;
         for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); it++){
             if((*it)->getMaterial() == r.getMaterial()){
+                delete *it;///libera a memoria alocada
                 listaDeResiduos.erase(it);
+                break;
             }//if
         }//for
     }//if
@@ -57,3 +59,10 @@ cadastroResidou::cadastroResidou(){
     create(*d);
     create(*e);
 }//construto
+cadastroResidou::~cadastroResidou(){
+    vector<Residuo*>::iterator it;
+        for(it= listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it) {
+            delete *it;///libera a memoria alocada
+        }//for
+    listaDeResiduos.clear();
+}//destrutor
