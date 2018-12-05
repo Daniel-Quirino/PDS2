@@ -15,6 +15,7 @@ class cadastroResidou{
         void update(Residuo &r, string _descricao);
         void daleted(Residuo &r);
         void listaDeResiduo();
+        string getDescricao(string _material);
         vector<Residuo*> listaDeResiduos;
 
     protected:
