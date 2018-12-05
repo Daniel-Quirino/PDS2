@@ -13,7 +13,7 @@ void cadastroResidou::create(Residuo &r){
 void cadastroResidou::daleted(Residuo &r){
     if(find(listaDeResiduos.begin(), listaDeResiduos.end(), &r) != listaDeResiduos.end()){
         vector<Residuo*>::iterator it;
-        for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); it++){
+        for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it){
             if((*it)->getMaterial() == r.getMaterial()){
                 listaDeResiduos.erase(it);
             }//if
