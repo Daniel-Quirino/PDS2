@@ -6,14 +6,16 @@
 
 using namespace std;
 
+
 void cadastroResidou::create(Residuo &r){
     listaDeResiduos.push_back(&r);
 }//void
 
 void cadastroResidou::daleted(Residuo &r){
+
     if(find(listaDeResiduos.begin(), listaDeResiduos.end(), &r) != listaDeResiduos.end()){
         vector<Residuo*>::iterator it;
-        for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it){
+        for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); it++){
             if((*it)->getMaterial() == r.getMaterial()){
                 listaDeResiduos.erase(it);
             }//if
@@ -36,7 +38,7 @@ void cadastroResidou::update(Residuo &r, string _descricao){
         vector<Residuo*>::iterator it;
         for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it) {
             if((*it)->getMaterial() == r.getMaterial()){
-                (*it)->setDescricaos(_descricao);
+                (*it)->setDescricao(_descricao);
             }//if
         }//for
     }//if
@@ -54,4 +56,4 @@ cadastroResidou::cadastroResidou(){
     create(*c);
     create(*d);
     create(*e);
-}//construtor*?
+}//construto
