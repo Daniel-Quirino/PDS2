@@ -6,7 +6,9 @@
 
 using namespace std;
 
-Pessoa::Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador,double _cpfCnpj){
+Pessoa::Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador,string _cpfCnpj){
+    validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
+    verficarData(_data);
     endereco = _endereco;
     dataDeNascimento = _dataDeNascimento;
     isPessoaFisica = _isPessoaFisica;
