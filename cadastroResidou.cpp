@@ -66,3 +66,11 @@ cadastroResidou::~cadastroResidou(){
         }//for
     listaDeResiduos.clear();
 }//destrutor
+string cadastroResidou::getDescricao(string _material){
+        vector<Residuo*>::iterator it;
+        for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); it++){
+            if((*it)->getMaterial() == _material){
+                return (*it)->getDescricao();
+            }//if
+        }//for
+}///string
