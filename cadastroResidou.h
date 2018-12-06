@@ -5,12 +5,12 @@
 #include <vector>
 using namespace std;
 
-class cadastroResidou{
+class cadastroResiduo{
     public:
 
 /*** asemelho a classe cadastropessoas ***/
-        cadastroResidou();
-        ~cadastroResidou();
+        cadastroResiduo();
+        ~cadastroResiduo();
         void create(Residuo &r);
         void update(Residuo &r, string _descricao);
         void daleted(Residuo &r);
