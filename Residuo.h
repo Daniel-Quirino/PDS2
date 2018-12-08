@@ -10,8 +10,8 @@ class Residuo
         Residuo(bool _solido, string _material, string _descricao);
 
         void setSolido(bool _solido);
-        void setMateria(bool _material);
-        void setDescricao(bool _descricao);
+        void setMateria(string _material);
+        void setDescricao(string _descricao);
 
         bool getSolido();
         string getMaterial();
