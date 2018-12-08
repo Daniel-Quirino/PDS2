@@ -36,7 +36,7 @@ void CadastroAgendamento::listarAgendamentos() {
 }
 
 
-void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos) {
+void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos, string _id) {
     if (find(listaDeAgendamentos.begin(), listaDeAgendamentos.end(), &p) != listaDeAgendamentos.end()){
 
         vector<Agendamento*>::iterator itV;

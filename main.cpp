@@ -58,7 +58,9 @@ int main() {
     PontoDeColeta *pontCol2 = new PontoDeColeta("Praca da Savassi", "Savassi", 10, "Perto do BK");
     PontoDeColeta *pontCol3 = new PontoDeColeta("Augusto de Lima", "Centro", 160, "Em frente ao Maleta");
 
-    Agendamento *ag1 = new Agendamento("18/11/2018", *pontCol, *p1, *p3, "Papelao", "1");
+
+
+    Agendamento *ag1 = new Agendamento("18/12/2018", *pontCol, *p1, *p3, "Papelao", "1");
     Agendamento *ag2 = new Agendamento("30/06/2019", *pontCol2, *p4, *p5, "Vidro", "2");
     Agendamento *ag3 = new Agendamento("14/02/2019", *pontCol3, *p1, *p5, "Metal", "3");
 
@@ -66,6 +68,9 @@ int main() {
     cadAgen->create(*ag1);
     cadAgen->create(*ag2);
     cadAgen->create(*ag3);
+
+    cadAgen->deleted(*ag2);
+    cadAgen->update(*ag1, "20/12/2018", *pontCol, *p1, *p3, "Pano", "1");
 
     cout << "----------------- Lista de Agendamentos: -----------------" << endl;
     cadAgen->listarAgendamentos();
