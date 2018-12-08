@@ -17,7 +17,7 @@ public:
     CadastroAgendamento(){}
 
     void create(Agendamento &p);
-    void update();
+    void update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos);
     void deleted(Agendamento &p);
     void listarAgendamentos();
     vector<Agendamento*> listaDeAgendamentos;
