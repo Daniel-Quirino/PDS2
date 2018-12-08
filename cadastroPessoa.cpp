@@ -37,11 +37,10 @@ void CadastroPessoa::listarUsuarios() {
 
 }
 
-void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj) {
+void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isDoador) {
     if (find(listaDeUsuarios.begin(), listaDeUsuarios.end(), &p) != listaDeUsuarios.end()){
 
-        //Pessoa.verficarData(_dataDeNascimento);
-        //Pessoa.validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
+        p.verficarData(_dataDeNascimento);
 
         vector<Pessoa*>::iterator itV;
         for(itV = listaDeUsuarios.begin(); itV != listaDeUsuarios.end(); ++itV) {
@@ -49,8 +48,6 @@ void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _d
                 (*itV)->setNome(_nome);
                 (*itV)->setEndereco(_endereco);
                 (*itV)->setDataDeNascimento(_dataDeNascimento);
-                (*itV)->setCpfCnpj(_cpfCnpj);
-                (*itV)->setIsPessoaFisica(_isPessoaFisica);
                 (*itV)->setIsDoador(_isDoador);
             }
         }
