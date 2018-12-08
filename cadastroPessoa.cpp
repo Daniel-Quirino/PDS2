@@ -1,5 +1,5 @@
 #include "cadastroPessoa.h"
-//#include "pessoa.h"
+#include "pessoa.h"
 //#include "pessoa.cpp"
 
 #include <string>
