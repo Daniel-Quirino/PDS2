@@ -1,6 +1,6 @@
-#include "Residuo.h"
-#include <vector>
+
 #include "cadastroResiduo.h"
+#include "Residuo.h"
 
 
 using namespace std;
@@ -45,7 +45,7 @@ void cadastroResiduo::update(Residuo &r, string _descricao){
     }//if
 }//void
 
-cadastroResiduo::cadastroResidou(){
+cadastroResiduo::cadastroResiduo(){
     /*** cria um pré cadastro de materiais ***/
     Residuo *a= new Residuo(true, "papel","Guardar em local seco, sem amassar.");
     Residuo *b= new Residuo(true,"Vidro","O vidro nao deve ser descartado sem uma protecao adequada");
@@ -58,14 +58,14 @@ cadastroResiduo::cadastroResidou(){
     create(*d);
     create(*e);
 }//construto
-cadastroResiduo::~cadastroResidou(){
+cadastroResiduo::~cadastroResiduo(){
     vector<Residuo*>::iterator it;
         for(it= listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it) {
             delete *it;///libera a memoria alocada
         }//for
     listaDeResiduos.clear();
 }//destrutor
-string cadastroResidou::getDescricao(string _material){
+string cadastroResiduo::getDescricao(string _material){
         vector<Residuo*>::iterator it;
         for(it = listaDeResiduos.begin(); it != listaDeResiduos.end(); it++){
             if((*it)->getMaterial() == _material){
@@ -73,3 +73,4 @@ string cadastroResidou::getDescricao(string _material){
             }//if
         }//for
 }///string
+
