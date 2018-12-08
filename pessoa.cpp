@@ -7,8 +7,8 @@
 using namespace std;
 
 Pessoa::Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj){
-    //validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
-    //verficarData(_dataDeNascimento);
+    validarCpfCnpj(_isPessoaFisica, _cpfCnpj, _nome);
+    verficarData(_dataDeNascimento, _nome);
     endereco = _endereco;
     dataDeNascimento = _dataDeNascimento;
     isPessoaFisica = _isPessoaFisica;
@@ -42,14 +42,15 @@ bool Pessoa::getIsDoador(){return isDoador;}
 
 string Pessoa::getCpfCnpj(){return cpfCnpj;}
 
-void Pessoa::validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj)
+void Pessoa::validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj, string _nome)
 {
     if(_isPessoaFisica)
         {
             string cpf = _cpfCnpj;
+            string mensagemErroCpf = "Erro: Cpf de " + _nome + " invalido.";
 
             if (cpf.size() != 11)
-                throw "Cpf invalido.";
+                throw mensagemErroCpf;
 
             int i, numero, resultado, soma = 0, base = 10;
             int digito1, digito2;
@@ -101,14 +102,15 @@ void Pessoa::validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj)
 
             if (atoi(str_nono.c_str()) != digito1 ||
                 atoi(str_decimo.c_str()) != digito2)
-                throw "Cpf invalido.";
+                throw mensagemErroCpf;
         }
         else
         {
             string cnpj = _cpfCnpj;
+            string mensagemErroCnpj = "Erro: Cnpj de " + _nome + " invalido.";
 
             if (cnpj.size() != 14)
-                throw "Cnpj invalido.";
+                throw mensagemErroCnpj;
 
             int i, numero, resultado, soma = 0, base = 5;
             int digito1, digito2;
@@ -158,13 +160,14 @@ void Pessoa::validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj)
 
             if (atoi(str_treze.c_str()) != digito1 ||
                 atoi(str_catorze.c_str()) != digito2)
-                throw "Cnpj invalido.";
+                throw mensagemErroCnpj;
         }
 }
 
-void Pessoa::verficarData(string _data)
+void Pessoa::verficarData(string _data, string _nome)
 {
     string data = _data;
+    string mensagemErroData = "Erro: Data de nascimento de " + _nome + " invalida.";
 
     if(data.size() == 10 && ((data[2] == '/' && data[5] == '/') || (data[2] == '-' && data[5] == '-')))
         {
@@ -178,12 +181,13 @@ void Pessoa::verficarData(string _data)
             int _ano = atoi(ano.c_str());
 
             if(_ano < 1900 || _ano > 2018 || _mes < 1 || _mes > 12 || _dia > 31 || _dia < 1)
-                throw "Data de nascimento invalida.";
+                throw mensagemErroData;
             else if(_dia > 28 && _mes == 2)
-                throw "Data de nascimento invalida.";
+                throw mensagemErroData;
             else if(_dia > 30 && (_mes == 4 || _mes == 6 || _mes == 9 || _mes == 11))
-                throw "Data de nascimento invalida.";
+                throw mensagemErroData;
         }
         else
-            throw "Data de nascimento invalida.";
+            throw mensagemErroData;
 }
+
