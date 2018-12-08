@@ -24,8 +24,8 @@ class Pessoa
         bool getIsPessoaFisica();
         bool getIsDoador();
         string getCpfCnpj();
-        void validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj);
-        void verficarData(string _dataDeNascimento);
+        void validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj, string _nome);
+        void verficarData(string _dataDeNascimento, string _nome);
 
     protected:
 
