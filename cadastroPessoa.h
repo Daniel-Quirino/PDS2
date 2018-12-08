@@ -16,7 +16,7 @@ public:
     CadastroPessoa(){}
 
     void create(Pessoa &p);
-    void update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj);
+    void update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isDoador);
     void deleted(Pessoa &p);
     void listarUsuarios();
     vector<Pessoa*> listaDeUsuarios;
