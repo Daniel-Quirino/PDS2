@@ -40,7 +40,7 @@ void CadastroPessoa::listarUsuarios() {
 void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isDoador) {
     if (find(listaDeUsuarios.begin(), listaDeUsuarios.end(), &p) != listaDeUsuarios.end()){
 
-        p.verficarData(_dataDeNascimento);
+        p.verficarData(_dataDeNascimento, _nome);
 
         vector<Pessoa*>::iterator itV;
         for(itV = listaDeUsuarios.begin(); itV != listaDeUsuarios.end(); ++itV) {
