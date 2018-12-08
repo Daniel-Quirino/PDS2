@@ -33,13 +33,9 @@ class Pessoa
         string nome;
         string endereco;
         string dataDeNascimento;
-        bool isPessoaFisica; //1 para pessoaFisica
-        bool isDoador; // 1 para doador
+        bool isPessoaFisica;
+        bool isDoador;
         string cpfCnpj;
 };
-
-
-
-
 
 #endif // PESSOA_H
