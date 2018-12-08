@@ -1,17 +1,10 @@
 #ifndef RANKING_H_INCLUDED
 #define RANKING_H_INCLUDED
-#include "Agendamento.h"
 #include "pessoa.h"
-#include "cadastro.h"
-#include "cadastroPessoa.h"
-#include "PontoDeColeta.h"
 #include "Agendamento.h"
 #include "CadastroAgendamento.h"
-#include "Residuo.h"
-#include "cadastroResiduo.h"
 #include <vector>
 #include <map>
-
 
 using namespace std;
 class Ranking{
