@@ -9,7 +9,7 @@ using namespace std;
 class Pessoa
 {
     public:
-        Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador,double _cpfCnpj);
+        Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj);
         //virtual ~pessoa();
 
         void setNome(string _nome);
@@ -17,15 +17,15 @@ class Pessoa
         void setDataDeNascimento(string _dataDeNascimento);
         void setIsPessoaFisica(bool _isPessoaFisica);
         void setIsDoador(bool _isDoador);
-        void setCpfCnpj(int _cpfCnpj);
+        void setCpfCnpj(string _cpfCnpj);
         string getNome();
         string getEndereco();
         string getDataDeNascimento();
         bool getIsPessoaFisica();
         bool getIsDoador();
-        double getCpfCnpj();
+        string getCpfCnpj();
         void validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj);
-        void verficarData(string _data);
+        void verficarData(string _dataDeNascimento);
 
     protected:
 
@@ -35,7 +35,7 @@ class Pessoa
         string dataDeNascimento;
         bool isPessoaFisica; //1 para pessoaFisica
         bool isDoador; // 1 para doador
-        double cpfCnpj;
+        string cpfCnpj;
 };
 
 

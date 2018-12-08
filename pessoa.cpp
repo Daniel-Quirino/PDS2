@@ -6,9 +6,9 @@
 
 using namespace std;
 
-Pessoa::Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador,string _cpfCnpj){
-    validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
-    verficarData(_data);
+Pessoa::Pessoa(string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj){
+    //validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
+    //verficarData(_dataDeNascimento);
     endereco = _endereco;
     dataDeNascimento = _dataDeNascimento;
     isPessoaFisica = _isPessoaFisica;
@@ -28,7 +28,7 @@ void Pessoa::setIsPessoaFisica(bool _isPessoaFisica) { isPessoaFisica = _isPesso
 
 void Pessoa::setIsDoador(bool _isDoador) { isDoador = _isDoador;}
 
-void Pessoa::setCpfCnpj(int _cpfCnpj) { cpfCnpj = _cpfCnpj;}
+void Pessoa::setCpfCnpj(string _cpfCnpj) { cpfCnpj = _cpfCnpj;}
 
 string Pessoa::getNome(){return nome;}
 
@@ -40,7 +40,7 @@ bool Pessoa::getIsPessoaFisica(){return isPessoaFisica;}
 
 bool Pessoa::getIsDoador(){return isDoador;}
 
-double Pessoa::getCpfCnpj(){return cpfCnpj;}
+string Pessoa::getCpfCnpj(){return cpfCnpj;}
 
 void Pessoa::validarCpfCnpj(bool _isPessoaFisica, string _cpfCnpj)
 {

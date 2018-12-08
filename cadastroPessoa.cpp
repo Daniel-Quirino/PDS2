@@ -1,4 +1,7 @@
 #include "cadastroPessoa.h"
+#include "pessoa.h"
+//#include "pessoa.cpp"
+
 #include <string>
 #include <iostream>
 #include <algorithm>
@@ -34,11 +37,11 @@ void CadastroPessoa::listarUsuarios() {
 
 }
 
-void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, double _cpfCnpj) {
+void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _dataDeNascimento, bool _isPessoaFisica, bool _isDoador, string _cpfCnpj) {
     if (find(listaDeUsuarios.begin(), listaDeUsuarios.end(), &p) != listaDeUsuarios.end()){
-        
-        verficarData(_dataDeNascimento);
-        validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
+
+        //Pessoa.verficarData(_dataDeNascimento);
+        //Pessoa.validarCpfCnpj(_isPessoaFisica, _cpfCnpj);
 
         vector<Pessoa*>::iterator itV;
         for(itV = listaDeUsuarios.begin(); itV != listaDeUsuarios.end(); ++itV) {
