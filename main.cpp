@@ -20,6 +20,8 @@
 #include "residuo.cpp"
 #include "cadastroResiduo.h"
 #include "cadastroResiduo.cpp"
+#include "Ranking.h"
+#include "Ranking.cpp"
 
 using namespace std;
 
@@ -117,6 +119,12 @@ int main() {
         cout<<cadres->getDescricao("Organico")<<endl;
         cadres->daleted(*res);
         cadres->~cadastroResiduo();
+        
+        Ranking *rak= new Ranking(cadAgen);
+        rak->maiorDoadorImprime();
+        rak->maiorReceptorImprime();
+        rak->rankingDoarLista();
+        rak->rankingReceptorLista();
         */
 
         /*casos de erros
