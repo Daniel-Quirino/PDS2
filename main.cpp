@@ -71,9 +71,7 @@ int main() {
     cadAgen->listarAgendamentos();
     cout << endl << endl;
 
-    Residuo *res = new Residuo(true, "vidro", "O vidro nao deve ser descartado sem uma protecao adequada");
-    cout << "Descricao: " << res->getDescricao() << endl;
-    
+
     cadastroResiduo *cadres= new cadastroResiduo();
     cadres->listaDeResiduo();
     Residuo *res = new Residuo(true, "Organico", "Deve estar guardado em sacos pretos");
