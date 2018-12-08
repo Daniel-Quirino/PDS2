@@ -31,12 +31,13 @@ void CadastroAgendamento::listarAgendamentos() {
     vector<Agendamento*> :: iterator itV;
     for(itV = listaDeAgendamentos.begin(); itV != listaDeAgendamentos.end(); ++itV) {
 
-        cout << (*itV)->getData() << " - " << (*itV)->getLocal().getRua() << " - " << (*itV)->getLocal().getNumero() << endl;
+        cout << (*itV)->getData() << " - " << (*itV)->getLocal().getRua() << " - " << (*itV)->getLocal().getNumero() <<
+        " - " << (*itV)->getResiduos().getMaterial() <<  endl;
     }
 }
 
 
-void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos, string _id) {
+void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, Residuo &_residuos, string _id) {
     if (find(listaDeAgendamentos.begin(), listaDeAgendamentos.end(), &p) != listaDeAgendamentos.end()){
 
         vector<Agendamento*>::iterator itV;

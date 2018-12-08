@@ -26,7 +26,7 @@ using namespace std;
 int main() {
 
     try
-    {   
+    {
         Pessoa *p1 = new Pessoa("Daniel Quirino", "Rua João Fernandes", "11/11/1997", true, true , "13494658609");
         Pessoa *p2 = new Pessoa("Filipe Lauar", "Avenida Miguel Perrela", "20/02/1996", true, false , "36559173097");
         Pessoa *p3 = new Pessoa("Pedro Vieira", "Rua Fernando de Albuquerque", "08/09/1994", false, false , "68884897000105");
@@ -61,10 +61,17 @@ int main() {
         PontoDeColeta *pontCol3 = new PontoDeColeta("Augusto de Lima", "Centro", 160, "Em frente ao Maleta");
 
 
+        Residuo *a= new Residuo(true, "papel","Guardar em local seco, sem amassar.");
+        Residuo *b= new Residuo(true,"Vidro","O vidro nao deve ser descartado sem uma protecao adequada");
+        Residuo *c= new Residuo(true, "Latas de refrigerante","Amassadas paar ocupar um volume menor.");
+        Residuo *d= new Residuo(false,"Oleo","Em garrafas PET fechadas, para não vazar");
+        Residuo *e= new Residuo(false,"tintas","Na propria embalagem original");
 
-        Agendamento *ag1 = new Agendamento("18/12/2018", *pontCol, *p1, *p3, "Papelao", "1");
-        Agendamento *ag2 = new Agendamento("30/06/2019", *pontCol2, *p4, *p5, "Vidro", "2");
-        Agendamento *ag3 = new Agendamento("14/02/2019", *pontCol3, *p1, *p5, "Metal", "3");
+
+
+        Agendamento *ag1 = new Agendamento("18/12/2018", *pontCol, *p1, *p3, *a, "1");
+        Agendamento *ag2 = new Agendamento("30/06/2019", *pontCol2, *p4, *p5, *b, "2");
+        Agendamento *ag3 = new Agendamento("14/02/2019", *pontCol3, *p1, *p5, *c, "3");
 
         CadastroAgendamento *cadAgen = new CadastroAgendamento();
         cadAgen->create(*ag1);
@@ -72,15 +79,15 @@ int main() {
         cadAgen->create(*ag3);
 
         cadAgen->deleted(*ag2);
-        cadAgen->update(*ag1, "20/12/2018", *pontCol, *p1, *p3, "Pano", "1");
+        cadAgen->update(*ag1, "20/12/2018", *pontCol, *p1, *p3, *d, "1");
 
         cout << "----------------- Lista de Agendamentos: -----------------" << endl;
         cadAgen->listarAgendamentos();
         cout << endl << endl;
 
 
-        cadastroResiduo *cadres= new cadastroResiduo();
-        cadres->listaDeResiduo();
+
+        /*
         Residuo *res = new Residuo(true, "Organico", "Deve estar guardado em sacos pretos");
         cadres->create(*res);
         cout<<cadres->getDescricao("Organico")<<endl;
@@ -88,18 +95,19 @@ int main() {
         cout<<cadres->getDescricao("Organico")<<endl;
         cadres->daleted(*res);
         cadres->~cadastroResiduo();
-        
+        */
+
         /*casos de erros
-        
+
             Pessoa *p6 = new Pessoa("Daniel Quirino", "Rua João Fernandes", "30/02/1997", true, true , "13642091601"); //erro data de nascimento
             Pessoa *p7 = new Pessoa("Filipe Lauar", "Avenida Miguel Perrela", "20/02/1996", true, false , "13494658678"); //erro cpf
             Pessoa *p8 = new Pessoa("Pedro Vieira", "Rua Fernando de Albuquerque", "08/09/1994", false, false , "6888489700010"); //erro cnpj
-            
+
             cp->update(*p1, "Daniel Pires", "Rua João Fernandes 107", "10/05/2019", false); //erro de data de nascimento no update
-            
-        
+
+
         */
-        
+
     }
     catch(string s)
     {

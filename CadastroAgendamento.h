@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <stdio.h>
+#include "Residuo.h"
 #include <iterator>
 #include "pessoa.h"
 #include "cadastro.h"
@@ -17,7 +18,7 @@ public:
     CadastroAgendamento(){}
 
     void create(Agendamento &p);
-    void update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos, string _id);
+    void update(Agendamento &p, string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, Residuo &_residuos, string _id);
     void deleted(Agendamento &p);
     void listarAgendamentos();
     vector<Agendamento*> listaDeAgendamentos;

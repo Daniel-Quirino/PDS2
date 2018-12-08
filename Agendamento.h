@@ -2,6 +2,8 @@
 #define AGENDAMENTO_H
 #include "pessoa.h"
 #include "PontoDeColeta.h"
+#include "Residuo.h"
+
 #include <string>
 
 using namespace std;
@@ -10,20 +12,20 @@ class Agendamento {
     /*** Agendamento ***/
 
     public:
-        Agendamento(string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, string _residuos, string _id);
+        Agendamento(string _data, PontoDeColeta &_local, Pessoa &_doador, Pessoa &_receptor, Residuo &_residuos, string _id);
 
         void setData(string _data);
         void setLocal(PontoDeColeta &_local);
         void setDoador(Pessoa &_doador);
         void setReceptor(Pessoa &_receptor);
-        void setResiduos(string _residuos);
+        void setResiduos(Residuo &_residuos);
         void setId(string _id);
 
         string getData();
         PontoDeColeta getLocal();
         Pessoa getDoador();
         Pessoa getReceptor();
-        string getResiduos();
+        Residuo getResiduos();
         string getId();
 
     private:
@@ -31,7 +33,7 @@ class Agendamento {
         PontoDeColeta *local;
         Pessoa *doador;
         Pessoa *receptor;
-        string residuos;
+        Residuo *residuos;
         string id;
 
 };
