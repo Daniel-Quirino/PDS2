@@ -11,8 +11,8 @@ Residuo::Residuo(bool _solido, string _material, string _descricao) {
 }
 
 void Residuo::setSolido(bool _solido) {solido = _solido;}
-void Residuo::setMateria(bool _material) {material = _material;}
-void Residuo::setDescricao(bool _descricao) {descricao = _descricao;}
+void Residuo::setMateria(string _material) {material = _material;}
+void Residuo::setDescricao(string _descricao) {descricao = _descricao;}
 
 bool Residuo::getSolido() {return solido;}
 string Residuo::getMaterial() {return material;}
