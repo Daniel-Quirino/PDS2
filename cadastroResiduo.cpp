@@ -45,19 +45,7 @@ void cadastroResiduo::update(Residuo &r, string _descricao){
     }//if
 }//void
 
-cadastroResiduo::cadastroResiduo(){
-    /*** cria um pré cadastro de materiais ***/
-    Residuo *a= new Residuo(true, "papel","Guardar em local seco, sem amassar.");
-    Residuo *b= new Residuo(true,"Vidro","O vidro nao deve ser descartado sem uma protecao adequada");
-    Residuo *c= new Residuo(true, "Latas de refrigerante","Amassadas paar ocupar um volume menor.");
-    Residuo *d= new Residuo(false,"Oleo","Em garrafas PET fechadas, para não vazar");
-    Residuo *e= new Residuo(false,"tintas","Na propria embalagem original");
-    create(*a);
-    create(*b);
-    create(*c);
-    create(*d);
-    create(*e);
-}//construto
+
 cadastroResiduo::~cadastroResiduo(){
     vector<Residuo*>::iterator it;
         for(it= listaDeResiduos.begin(); it != listaDeResiduos.end(); ++it) {

@@ -8,7 +8,6 @@ using namespace std;
 
 class cadastroResiduo{
     public:
-        cadastroResiduo();
         ~cadastroResiduo();
         void create(Residuo &r);
         void update(Residuo &r, string _descricao);
