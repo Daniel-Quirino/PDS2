@@ -18,12 +18,14 @@
 #include "cadastroAgendamento.cpp"
 #include "Residuo.h"
 #include "residuo.cpp"
+#include "cadastroResiduo.h"
+#include "cadastroResiduo.cpp"
 
 using namespace std;
 
 int main() {
 
-    Pessoa *p1 = new Pessoa("Daniel Quirino", "Rua Jo„o Fernandes", "11/11/1997", true, true , "13494658609");
+    Pessoa *p1 = new Pessoa("Daniel Quirino", "Rua Jo√£o Fernandes", "11/11/1997", true, true , "13494658609");
     Pessoa *p2 = new Pessoa("Filipe Lauar", "Avenida Miguel Perrela", "20/02/1996", true, false , "36559173097");
     Pessoa *p3 = new Pessoa("Pedro Vieira", "Rua Fernando de Albuquerque", "08/09/1994", false, false , "47994400043");
     Pessoa *p4 = new Pessoa("Lucas Mello ", "Rua Boaventura", "16/04/1993", true, true , "56493783046");
@@ -44,7 +46,7 @@ int main() {
 
     cp->deleted(*p2);
     cp->deleted(*p4);
-    cp->update(*p1, "Daniel Pires", "Rua Jo„o Fernandes 107", "10/05/1997", false, false , "78879349074" );
+    cp->update(*p1, "Daniel Pires", "Rua Jo√£o Fernandes 107", "10/05/1997", false, false , "78879349074" );
 
     cout << "-------- Lista atualizada de pessoas cadastradas: --------" << endl;
     cp->listarUsuarios();
@@ -53,7 +55,7 @@ int main() {
 
 
     PontoDeColeta *pontCol = new PontoDeColeta("Rua Alameda dos Anjos", "Liberdade", 129, "apt 107");
-    PontoDeColeta *pontCol2 = new PontoDeColeta("PraÁa da Savassi", "Savassi", 10, "perto do BK");
+    PontoDeColeta *pontCol2 = new PontoDeColeta("Pra√ßa da Savassi", "Savassi", 10, "perto do BK");
 
     Agendamento *ag1 = new Agendamento("18/11/2018", *pontCol, *p1, *p3, "Papelao");
     Agendamento *ag2 = new Agendamento("30/06/2009", *pontCol2, *p4, *p5, "Vidro");
@@ -68,6 +70,14 @@ int main() {
 
     Residuo *res = new Residuo(true, "vidro", "O vidro nao deve ser descartado sem uma protecao adequada");
     cout << "Descricao: " << res->getDescricao() << endl;
-
-
+    
+    cadastroResiduo *cadres= new cadastroResiduo();
+    cadres->listaDeResiduo();
+    Residuo *res = new Residuo(true, "Organico", "Deve estar guardado em sacos pretos");
+    cadres->create(*res);
+    cout<<cadres->getDescricao("Organico")<<endl;
+    cadres->update(*res,"Deve estar em sacos claros");
+    cout<<cadres->getDescricao("Organico")<<endl;
+    cadres->daleted(*res);
+    cadres->~cadastroResiduo();
 }
