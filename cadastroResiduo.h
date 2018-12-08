@@ -1,14 +1,13 @@
 #ifndef CADATRORESIDOU_H_INCLUDED
 #define CADATRORESIDOU_H_INCLUDED
 #include "Residuo.h"
-
 #include <vector>
+
+
 using namespace std;
 
 class cadastroResiduo{
     public:
-
-/*** asemelho a classe cadastropessoas ***/
         cadastroResiduo();
         ~cadastroResiduo();
         void create(Residuo &r);
@@ -21,7 +20,4 @@ class cadastroResiduo{
     protected:
     private:
 };
-
-
-
 #endif // CADATRORESIDOU_H_INCLUDED
