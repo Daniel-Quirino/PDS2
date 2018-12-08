@@ -20,8 +20,8 @@
 #include "residuo.cpp"
 #include "cadastroResiduo.h"
 #include "cadastroResiduo.cpp"
-#include "Ranking.h"
-#include "Ranking.cpp"
+//#include "Ranking.h"
+//#include "Ranking.cpp"
 
 using namespace std;
 
