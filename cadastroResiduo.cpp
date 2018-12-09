@@ -13,7 +13,7 @@ void cadastroResiduo::create(Residuo &r){
     if (find(listaDeResiduos.begin(), listaDeResiduos.end(), &r) == listaDeResiduos.end()){
         listaDeResiduos.push_back(&r);
     } else {
-        cout << "Residuo ja Cadastrado" << endl;
+        cout << "Residuo: " r->getMaterial() + " ja Cadastrado" << endl;
     }
 }//void
 
@@ -30,7 +30,7 @@ void cadastroResiduo::daleted(Residuo &r){
         }//for
     }//if
     else{
-        cout<<"Residuo não cadastrado"<<endl;
+        cout<<"Residuo: " r->getMaterial() + " nao cadastrado"<<endl;
     }
 }//void
 void cadastroResiduo::listaDeResiduo(){
@@ -51,7 +51,7 @@ void cadastroResiduo::update(Residuo &r, string _descricao){
         }//for
     }//if
     else{
-        cout<<"Residuo não cadastrado"<<endl;
+        cout<<"Residuo: " r->getMaterial() + " nao cadastrado"<<endl;
     }
 }//void
 
