@@ -7,8 +7,8 @@ using namespace std;
 
 
 void cadastroResiduo::create(Residuo &r){
-    if (find(listaDeResiduos.begin(), listaDeResiduos.end(), &p) == listaDeResiduos.end()){
-        listaDeResiduos.push_back(&p);
+    if (find(listaDeResiduos.begin(), listaDeResiduos.end(), &r) == listaDeResiduos.end()){
+        listaDeResiduos.push_back(&r);
     } else {
         cout << "Residuo ja Cadastrado" << endl;
     }
