@@ -1,4 +1,7 @@
-
+#include <string>
+#include <iostream>
+#include <algorithm>
+#include <vector>
 #include "cadastroResiduo.h"
 #include "Residuo.h"
 
