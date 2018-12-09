@@ -10,7 +10,7 @@ void CadastroAgendamento::create(Agendamento &p){
     if (find(listaDeAgendamentos.begin(), listaDeAgendamentos.end(), &p) == listaDeAgendamentos.end()){
         listaDeAgendamentos.push_back(&p);
     } else {
-        cout << "Agendamento: " p->getId() + " ja Cadastrado" << endl;
+        cout << "Agendamento: "+ p.getId() + " ja Cadastrado" << endl;
     }
 
 }
@@ -26,7 +26,7 @@ void CadastroAgendamento::deleted(Agendamento &p) {
 
         }
     } else {
-        cout << "Agendamento: " p->getId() + " nao Cadastrado" << endl;
+        cout << "Agendamento: " +p.getId() + " nao Cadastrado" << endl;
     }
 }
 
@@ -54,7 +54,7 @@ void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_l
             }
         }
     } else {
-        cout << "Agendamento: " p->getId() + " nao Cadastrado" << endl;
+        cout << "Agendamento: "+ p.getId() + " nao Cadastrado" << endl;
     }
 }
 
