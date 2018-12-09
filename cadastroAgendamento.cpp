@@ -7,8 +7,11 @@
 using namespace std;
 
 void CadastroAgendamento::create(Agendamento &p){
-
-    listaDeAgendamentos.push_back(&p);
+    if (find(listaDeAgendamentos.begin(), listaDeAgendamentos.end(), &p) == listaDeAgendamentos.end()){
+        listaDeAgendamentos.push_back(&p);
+    } else {
+        cout << "Agendamento ja Cadastrado" << endl;
+    }
 
 }
 
@@ -50,6 +53,8 @@ void CadastroAgendamento::update(Agendamento &p, string _data, PontoDeColeta &_l
                 (*itV)->setResiduos(_residuos);
             }
         }
+    } else {
+        cout << "Agendamento nao Cadastrado" << endl;
     }
 }
 
