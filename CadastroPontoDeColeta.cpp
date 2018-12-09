@@ -11,7 +11,7 @@ void CadastroPontoDeColeta::create(PontoDeColeta &p){
     if (find(listaDePontosDeColeta.begin(), listaDePontosDeColeta.end(), &p) == listaDePontosDeColeta.end()){
         listaDePontosDeColeta.push_back(&p);
     } else {
-        cout << "Ponto de coleta ja Cadastrado" << endl;
+        cout << "Ponto de coleta: " p->getRua() + " ja Cadastrado" << endl;
     }
 }
 
@@ -26,7 +26,7 @@ void CadastroPontoDeColeta::deleted(PontoDeColeta &p) {
 
         }
     } else {
-        cout << "Ponto de Coleta nao Cadastrado" << endl;
+        cout << "Ponto de Coleta: " p->getRua() + " nao Cadastrado" << endl;
     }
 }
 
@@ -52,6 +52,6 @@ void CadastroPontoDeColeta::update(PontoDeColeta &p, string _rua, string _bairro
             }
         }
     } else {
-        cout<< "Ponto de Coleta nao Cadastrado" << endl;
+        cout<< "Ponto de Coleta: " p->getRua() + " nao Cadastrado" << endl;
     }
 }
