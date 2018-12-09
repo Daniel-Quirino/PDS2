@@ -20,6 +20,7 @@ class Agendamento {
         void setReceptor(Pessoa &_receptor);
         void setResiduos(Residuo &_residuos);
         void setId(string _id);
+        void verficarData(string _data, string _nome);
 
         string getData();
         PontoDeColeta getLocal();
