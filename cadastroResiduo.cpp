@@ -7,7 +7,11 @@ using namespace std;
 
 
 void cadastroResiduo::create(Residuo &r){
-    listaDeResiduos.push_back(&r);
+    if (find(listaDeResiduos.begin(), listaDeResiduos.end(), &p) == listaDeResiduos.end()){
+        listaDeResiduos.push_back(&p);
+    } else {
+        cout << "Residuo ja Cadastrado" << endl;
+    }
 }//void
 
 void cadastroResiduo::daleted(Residuo &r){
@@ -43,6 +47,9 @@ void cadastroResiduo::update(Residuo &r, string _descricao){
             }//if
         }//for
     }//if
+    else{
+        cout<<"Residuo não cadastrado"<<endl;
+    }
 }//void
 
 
