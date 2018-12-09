@@ -9,7 +9,11 @@
 using namespace std;
 
 void CadastroPessoa::create(Pessoa &p){
-    listaDeUsuarios.push_back(&p);
+    if (find(listaDeUsuarios.begin(), listaDeUsuarios.end(), &p) == listaDeUsuarios.end()){
+        listaDeUsuarios.push_back(&p);
+    } else {
+        cout << "Usuário ja Cadastrado" << endl;
+    }
 }
 
 void CadastroPessoa::deleted(Pessoa &p) {
@@ -50,5 +54,7 @@ void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _d
                 (*itV)->setIsDoador(_isDoador);
             }
         }
+    } else {
+        cout << "Usuário nao Cadastrado" << endl;
     }
 }
