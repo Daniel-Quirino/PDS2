@@ -12,7 +12,7 @@ void CadastroPessoa::create(Pessoa &p){
     if (find(listaDeUsuarios.begin(), listaDeUsuarios.end(), &p) == listaDeUsuarios.end()){
         listaDeUsuarios.push_back(&p);
     } else {
-        cout << "Usuário ja Cadastrado" << endl;
+        cout << "Usuário: " p->getNome() + " ja Cadastrado" << endl;
     }
 }
 
@@ -27,7 +27,7 @@ void CadastroPessoa::deleted(Pessoa &p) {
 
         }
     } else {
-        cout << "Usuário nao Cadastrado" << endl;
+        cout << "Usuario: " p->getNome() + " nao Cadastrado" << endl;
     }
 }
 
@@ -55,6 +55,6 @@ void CadastroPessoa::update(Pessoa &p, string _nome, string _endereco, string _d
             }
         }
     } else {
-        cout << "Usuário nao Cadastrado" << endl;
+        cout << "Usuario: " p->getNome() + " nao Cadastrado" << endl;
     }
 }
