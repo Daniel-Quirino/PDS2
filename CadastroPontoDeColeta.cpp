@@ -8,7 +8,11 @@
 using namespace std;
 
 void CadastroPontoDeColeta::create(PontoDeColeta &p){
-    listaDePontosDeColeta.push_back(&p);
+    if (find(listaDePontosDeColeta.begin(), listaDePontosDeColeta.end(), &p) == listaDePontosDeColeta.end()){
+        listaDePontosDeColeta.push_back(&p);
+    } else {
+        cout << "Ponto de coleta ja Cadastrado" << endl;
+    }
 }
 
 void CadastroPontoDeColeta::deleted(PontoDeColeta &p) {
@@ -47,5 +51,7 @@ void CadastroPontoDeColeta::update(PontoDeColeta &p, string _rua, string _bairro
                 (*itV)->setComplemento(_complemento);
             }
         }
+    } else {
+        cout<< "Ponto de Coleta nao Cadastrado" << endl;
     }
 }
