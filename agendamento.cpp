@@ -48,7 +48,7 @@ void Agendamento:: verficarData(string _data, string _nome){
             int _mes = atoi(mes.c_str());
             int _ano = atoi(ano.c_str());
 
-            if(_ano < 1900 || _ano > 2030 || _mes < 1 || _mes > 12 || _dia > 31 || _dia < 1)
+            if(_ano < 2018 || _ano > 2030 || _mes < 1 || _mes > 12 || _dia > 31 || _dia < 1)
                 throw mensagemErroData;
             else if(_dia > 28 && _mes == 2)
                 throw mensagemErroData;
