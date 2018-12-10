@@ -1,4 +1,4 @@
-#include "pontoDeColeta.h"
+#include "PontoDeColeta.h"
 #include <string>
 #include <iostream>
 #include <algorithm>
