@@ -5,8 +5,8 @@ OBJDIR := build
 BINDIR := bin
 INCDIR := include
 
-MAIN := program/main.cpp
-TESTER := program/tester.cpp
+MAIN := main.cpp
+TESTER := tester.cpp
 
 
 SRCEXT := cpp
