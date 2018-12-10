@@ -6,7 +6,6 @@ BINDIR := bin
 INCDIR := include
 
 MAIN := main.cpp
-TESTER := tester.cpp
 
 
 SRCEXT := cpp
@@ -27,11 +26,6 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 main: $(OBJECTS)
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(INC) $(MAIN) $^  -o $(BINDIR)/main 
-
-tests: $(OBJECTS)
-	@mkdir -p $(BINDIR)
-	$(CC) $(CFLAGS) $(INC) $(TESTER) $(TSTSOURCES) $^ -o $(BINDIR)/tester 
-	$(BINDIR)/tester 
 
 all: main
 
