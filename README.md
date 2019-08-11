@@ -1,2 +1,7 @@
 # PDS2
-Trabalho de PDS2
+
+Trabalho Prático da matéria de Programação e Desenvolvimento de software (UFMG).
+
+O trabalho foi feito em grupo utilizando os conceitos de Programação Orientada a Objetos (POO).
+
+O trabalho consiste, resumidamente, em criar um programa para que pessoas possam poar seus resídeos,com o objetivo de favorecer o desenvolvimento sustentável
